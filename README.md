@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-3776AB.svg)](https://www.python.org/)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](#)
+[![GitHub](https://img.shields.io/github/stars/f123v/case-rewriter?style=flat)](https://github.com/f123v/case-rewriter)
 
 一个给 AI Agent 用的 Skill（兼容 Claude Skills / 通用 Agent 技能目录格式）。核心不是"换个说法"，而是**把规范文件编译成检查项**，再用脚本把"改写后不合规"这件事拦住。
 
@@ -129,13 +130,15 @@ case-rewriter spec_lint · examples/output-dabingli.md
 ## 安装
 
 ```bash
-git clone https://github.com/<you>/case-rewriter.git
+git clone https://github.com/f123v/case-rewriter.git
 
 # 通用 Agent（含 WorkBuddy / Claude Skills 兼容目录）
 cp -r case-rewriter ~/.workbuddy-ai/skills/case-rewriter
 # 或
 cp -r case-rewriter ~/.claude/skills/case-rewriter
 ```
+
+不想用 git 也行——在仓库页点 `Code → Download ZIP`，解压后同样丢进 `skills/` 目录。
 
 Windows：
 
