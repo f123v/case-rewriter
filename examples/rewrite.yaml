@@ -1,0 +1,39 @@
+# case-rewriter 改写配置示例
+# 用法：python scripts/scaffold.py --format soap --config examples/rewrite.yaml -o my-case.md
+
+meta:
+  title: 急性阑尾炎教学病例（SOAP 版）
+  format: soap
+  target_length: 1100          # 允许 ±20%
+
+identity:
+  patient_code: 患者A
+  age: 32                     # 原 47 岁；同属成人好发年龄段
+  sex: 女                     # 急性阑尾炎无性别特异性
+  occupation: 小学教师
+
+timeline:
+  mode: shift                 # shift 整体平移 | keep 保留
+  delta_days: 21              # 相对间隔不变
+
+institution:
+  level: 三级                  # 保持三级医院，才能匹配 CT 与腹腔镜手术
+  region: 华东地区某市
+
+lab:
+  mode: jitter                # jitter 参考区间内扰动 | keep 保留
+  max_delta_pct: 20           # 不得跨越临床决策阈值（WBC 10、Hb 115/130 等）
+
+clinical:
+  diagnosis: keep             # keep | change | broaden | narrow
+  keep_evidence_chain: true   # 症状→体征→检查→诊断 的因果链必须保留
+  keep_negative_findings: true # Murphy 征阴性等鉴别用阴性体征不可删
+  comorbidities: keep
+
+style:
+  language: zh-CN
+  remove_value_judgement: true # 去掉"处理不当""延误"等追责表述
+
+compliance:
+  deidentify: true
+  require_review_notice: true
